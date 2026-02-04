@@ -291,8 +291,8 @@ class DistillationLoss(nn.Module):
             print(f"Teacher shape: {teacher.size()}\n")
 
         # # Sort in descending order to align probabilities
-        student = student.sort(dim=-1, descending=True).values
-        teacher = teacher.sort(dim=-1, descending=True).values
+        # student = student.sort(dim=-1, descending=True).values
+        # teacher = teacher.sort(dim=-1, descending=True).values
         teacher = improved_sort(teacher)
         teacher = teacher[:,:,:50]
         if self.f == 1:
